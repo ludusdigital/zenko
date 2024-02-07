@@ -30,7 +30,7 @@ def update_prompt_type():
   st.session_state["selected_prompt"] = prompt
 
 
-st.title("ZENKO®")
+st.title("💬 ZENKO®")
 st.caption(
     "Anti-hejt AI chatbot za podržavajuće odgovore na hejt komentare sa društvenih mreža.✨"
 )
