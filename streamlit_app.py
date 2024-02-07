@@ -1,9 +1,8 @@
 import streamlit as st
 from openai import OpenAI
-import os
 
 # Postavljanje API ključa
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
 # Funkcija za resetovanje poruka
