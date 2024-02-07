@@ -44,7 +44,7 @@ for msg in st.session_state["messages"]:
   if role == "user":
     st.chat_message(role, avatar="🤬").write(content)
   elif role == "assistant":
-    st.chat_message(role, avatar="😂").write(content)
+    st.chat_message(role, avatar="🛁").write(content)
 
 if prompt := st.chat_input("Unesite negativni komentar sa društvene mreže..."):
   reset_messages()  # Resetujemo poruke kako bi očistili prethodne konverzacije
@@ -71,4 +71,4 @@ if prompt := st.chat_input("Unesite negativni komentar sa društvene mreže...")
     if role == "user":
       st.chat_message(role, avatar="🤬").write(content)
     elif role == "assistant":
-      st.chat_message(role, avatar="😂").write(content)
+      st.chat_message(role, avatar="🛁").write(content)
