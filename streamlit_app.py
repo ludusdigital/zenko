@@ -35,6 +35,14 @@ st.caption(
     "Anti-hejt AI chatbot za podržavajuće odgovore na hejt komentare sa društvenih mreža.✨"
 )
 
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 update_prompt_type()
 
 # Prikazivanje poruka koristeći standardne Streamlit funkcije
