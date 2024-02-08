@@ -20,6 +20,7 @@ st.markdown("""
         bottom: 20px;
         left: 0;
         text-align: center;
+        padding: 0 20px;
         width: 100%;
         z-index: 9999;
     }
