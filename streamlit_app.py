@@ -11,6 +11,8 @@ def reset_messages():
 if "messages" not in st.session_state:
   st.session_state["messages"] = []
 
+st.set_page_config(page_title="ZENKO | Anti-hejt AI chatbot", page_icon="🛁")
+
 st.markdown("""
     <style>
     .bottom-center-text {
