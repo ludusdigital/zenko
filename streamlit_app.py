@@ -11,6 +11,22 @@ def reset_messages():
 if "messages" not in st.session_state:
   st.session_state["messages"] = []
 
+st.markdown("""
+    <style>
+    .bottom-center-text {
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 9999;
+    }
+    </style>
+    """,
+            unsafe_allow_html=True)
+st.caption(
+    '<div class="bottom-center-text">Ako želite da naučite da pravite ovakve AI chatbot-ove, prijavite se na moju <a href="https://forms.gle/fw7U1MjrQ9GafAFz9">AI grupu na Discordu</a>. Čekam vas!</div>',
+    unsafe_allow_html=True)
 
 # Funkcija za odabir vrste prompta i postavljanje u session_state
 def update_prompt_type():
@@ -31,8 +47,8 @@ def update_prompt_type():
 
 
 st.title("💬 ZENKO®")
-st.caption(
-    "Anti-hejt AI chatbot za podržavajuće odgovore na hejt komentare sa društvenih mreža.✨"
+st.markdown(
+    "Anti-hejt AI chatbot by [Miloš Ludus](https://www.instagram.com/milosludus) za podržavajuće odgovore na hejt komentare sa društvenih mreža.✨"
 )
 
 hide_streamlit_style = """
@@ -54,7 +70,7 @@ for msg in st.session_state["messages"]:
   elif role == "assistant":
     st.chat_message(role, avatar="🛁").write(content)
 
-if prompt := st.chat_input("Unesite negativni komentar sa društvene mreže..."):
+if prompt := st.chat_input("Unesite negativni komentar 🤬..."):
   reset_messages()  # Resetujemo poruke kako bi očistili prethodne konverzacije
   st.session_state["messages"].append({"role": "user", "content": prompt})
 
