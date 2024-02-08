@@ -28,7 +28,7 @@ st.markdown("""
     """,
             unsafe_allow_html=True)
 st.caption(
-    '<div class="bottom-center-text">Ako želite da naučite da pravite ovakve AI chatbot-ove, prijavite se na moju <a href="https://forms.gle/fw7U1MjrQ9GafAFz9">AI grupu na Discordu</a>. Čekam vas!</div>',
+    '<div class="bottom-center-text">Ako želite da naučite da pravite ovakve AI chatbot-ove, prijavite se na moju <a href="https://forms.gle/fw7U1MjrQ9GafAFz9">AI grupu na Discordu</a>.</div>',
     unsafe_allow_html=True)
 
 # Funkcija za odabir vrste prompta i postavljanje u session_state
