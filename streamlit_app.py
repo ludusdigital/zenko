@@ -11,7 +11,7 @@ def reset_messages():
 if "messages" not in st.session_state:
   st.session_state["messages"] = []
 
-st.set_page_config(page_title="ZENKO | Anti-hejt AI chatbot", page_icon="💬")
+st.set_page_config(page_title="ZENKO | Anti-hate AI chatbot", page_icon="💬")
 
 st.markdown("""
     <style>
@@ -33,8 +33,8 @@ st.caption(
 
 # Funkcija za odabir vrste prompta i postavljanje u session_state
 def update_prompt_type():
-  prompt_type = st.radio("Ko želite da odgovori na ovaj komentar?",
-                         ["🌸 Psiholog", "😏 Sarkastični uličar"],
+  prompt_type = st.radio("Who would you like to respond to this comment?",
+                         ["🌸 Psychologist", "😏 Sarcastic guy"],
                          on_change=reset_messages)
   prompt = ""
   if prompt_type == "🌸 Psiholog":
@@ -51,7 +51,7 @@ def update_prompt_type():
 
 st.title("💬 ZENKO®")
 st.markdown(
-    "Anti-hejt AI chatbot by [Miloš Ludus](https://www.instagram.com/milosludus) za podržavajuće odgovore na hejt komentare sa društvenih mreža.✨"
+    "Anti-hate AI chatbot by [Miloš Ludus](https://www.instagram.com/milosludus) for supportive responses to hate comments on social media.✨"
 )
 
 hide_streamlit_style = """
@@ -77,7 +77,7 @@ if prompt := st.chat_input("Unesite negativni komentar 🤬..."):
   reset_messages()  # Resetujemo poruke kako bi očistili prethodne konverzacije
   st.session_state["messages"].append({"role": "user", "content": prompt})
 
-  with st.spinner("🤔 Uskoro stiže hladan tuš za hejtera..."):
+  with st.spinner("🤔 Get ready for a cold shower, haters..."):
     response = client.chat.completions.create(
         model="gpt-3.5-turbo-1106",
         messages=[{
