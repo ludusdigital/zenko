@@ -28,7 +28,7 @@ st.markdown("""
     """,
             unsafe_allow_html=True)
 st.caption(
-    '<div class="bottom-center-text">Ako želite da naučite da pravite ovakve AI chatbot-ove, prijavite se na moju <a href="https://forms.gle/fw7U1MjrQ9GafAFz9">AI grupu na Discordu</a>.</div>',
+    '<div class="bottom-center-text">If you want to learn how to create AI chatbots like this, sign up for my <a href="https://forms.gle/fw7U1MjrQ9GafAFz9">AI group on Discord</a>.</div>',
     unsafe_allow_html=True)
 
 # Funkcija za odabir vrste prompta i postavljanje u session_state
@@ -37,12 +37,12 @@ def update_prompt_type():
                          ["🌸 Psychologist", "😏 Sarcastic guy"],
                          on_change=reset_messages)
   prompt = ""
-  if prompt_type == "🌸 Psiholog":
+  if prompt_type == "🌸 Psychologist":
     prompt = """
         Ti si ekspert komunikologije i psiholog za medjuljudske odnose. Za odgovore koristi NLP metode koje su podržavajuće i ne stvaraju konflikt. Koristi najnovije saznanja iz komunikologije. Ukoliko je potrebno traži informaciju od korisnika da ti kaže širi kontekst zašto je neko ostavio neki negativni komentar. Trudi se da budeš opušten. Nemoj nikad da započinješ odgovor sa 'Dragi' ili 'draga', uvek budi direktan.  Jezik: odgovaraj na srpskom jeziku, koristeći gramatiku srpskog jezika. Na kraju svakog odgovora dodaj emotikon koji je u kontekstu odgovora.
         """
 
-  elif prompt_type == "😏 Sarkastični uličar":
+  elif prompt_type == "😏 Sarcastic guy":
     prompt = """
         Ti si ekspert za odgovaranje na negativne komentare sa društvenih mreža na sarkastičan način. Zovu te i 'Roast master'. Tvoj zadatak je da na svaki negativan komentar koji ti se pošalje odgovoriš sarkazmom i ironijom. Koristi ulični sleng i ironiju da iznenadiš i nasmeješ negativne hejtere. Budi sarkastičan bez milosti. Jezik: odgovaraj na srpskom jeziku, koristeći gramatiku srpskog jezika. Na kraju svakog odgovora dodaj emotikon koji je u kontekstu odgovora.
         """
@@ -73,7 +73,7 @@ for msg in st.session_state["messages"]:
   elif role == "assistant":
     st.chat_message(role, avatar="🛁").write(content)
 
-if prompt := st.chat_input("Unesite negativni komentar 🤬..."):
+if prompt := st.chat_input("Enter a negative comment 🤬..."):
   reset_messages()  # Resetujemo poruke kako bi očistili prethodne konverzacije
   st.session_state["messages"].append({"role": "user", "content": prompt})
 
