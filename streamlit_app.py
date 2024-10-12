@@ -79,7 +79,7 @@ if prompt := st.chat_input("Enter a negative comment 🤬..."):
 
   with st.spinner("🤔 Get ready for a cold shower, haters..."):
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
+        model="gpt-4o-mini",
         messages=[{
             "role": "system",
             "content": st.session_state["selected_prompt"]
